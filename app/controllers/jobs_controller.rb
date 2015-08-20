@@ -2,12 +2,17 @@ class JobsController < ApplicationController
 
 	before_action :find_job, except: [:index, :new, :create]
 
-	def index 
-		@jobs = Job.all.order('created_at DESC')
-
+	def index
+		if params[:category].blank?
+			@jobs = Job.all.order("created_at DESC")
+		else
+			@category_id = Category.find_by(name: params[:category]).id
+			@jobs = Job.where(category_id: @category_id).order("created_at DESC")
+		end
 	end
 
 	def show 
+		@category = Category.find(@job.category_id)
 
 	end
 
@@ -55,7 +60,7 @@ class JobsController < ApplicationController
 	private
 
 	def jobs_params
-		params.require(:job).permit(:title, :description, :company, :url)
+		params.require(:job).permit(:title, :description, :company, :url, :category_id)
 	end
 
 	def find_job
