@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+	<%= link_to "JOBS BOARD" , root_path, id: "logo" %>
+	<hr>
+
 
 <%= yield %>
-
+</div>
 </body>
 </html>
