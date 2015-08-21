@@ -1,7 +1,9 @@
-.row
-	.col-xs-12.col-md-8.col-md-offset-2
-		%h1 ALL JOBS
-		%hr
+#jobs
+	- if @category.blank?
+		%h1 All Jobs
+	- else
+		%h1= @category.name + " " + "Job".pluralize( @jobs.length)
+	.job
 		- @jobs.each do |job|
 			%h2= link_to (job.title).upcase , job
 			%p= job.description

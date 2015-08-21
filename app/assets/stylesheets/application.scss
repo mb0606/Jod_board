@@ -16,23 +16,85 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container {
-	background-color: #eee;
+
+* {
+	box-sizing: border-box;
 }
 
-.nav-brand {
-	font-size:2em;
-	font-weight: 800;
-	color: #000;
-	text-decoration: none;
-	padding-top:55px;
-	&:hover {
-		text-decoration: none;
-		color: black;
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+  background: -webkit-linear-gradient(90deg, #2B5597 10%, #2BF9F4 90%);
+  background:    -moz-linear-gradient(90deg, #2B5597 10%, #2BF9F4 90%);
+  background:     -ms-linear-gradient(90deg, #2B5597 10%, #2BF9F4 90%);
+  background:      -o-linear-gradient(90deg, #2B5597 10%, #2BF9F4 90%);
+  background:         linear-gradient(90deg, #2B5597 10%, #2BF9F4 90%);
+  font-family: 'Lato', sans-serif;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.navbar-default {
+	background-color: white;
+	border-radius: 0;
+	height: 80px;
+	padding: 15px 0;
+	border: none;
+}
+
+.navbar-brand {
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-size: 2em;
+	font-weight: 300;
+	color: #2B4E97 !important;
+}
+
+#jobs {
+	h1 { color: white ;
+		 font-size: 3em;
+		 text-align: center;
 	}
-	
+	.job {
+		padding: 1em 0;
+		border-bottom: 1px solid rgba(250,250,250, 0.5);
+		h2 {
+			font-size: 2.5em;
+			font-weight: 300;
+			margin-bottom: 0;
+			color: white;
+			a {
+				color: white;
+				&:hover {
+					text-decoration: none;
+					color: rgba(250,250,250, 0.5);
+				}
+			}
+		}
+		p {
+			color: rgba(250,250,250, 0.5);
+		}
+		a {
+			color: rgba(250,250,250, 0.7);
+			&:hover {
+				color: rgba(250,250,250, 0.8);
+				text-decoration: none;
+			}
+		}
+	}
 }
 
-.btn .btn-primary .navbar-btn {
-	color:white;
+#links {
+	margin-top: 2em;
 }
